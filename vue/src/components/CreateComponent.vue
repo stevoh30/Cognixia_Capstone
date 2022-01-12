@@ -1,4 +1,5 @@
 <template>
+<!-- Form Display -->
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h3 class="text-center">Create Employee</h3>
@@ -28,7 +29,7 @@
                     <input type="text" class="form-control" v-model="employee.location" required>
                 </div> <br>
 
-                <div class="form-group">
+                <div class="form-group text-center">
                     <button class="btn btn-danger btn-block">Create</button>
                 </div>
             </form>
@@ -37,6 +38,7 @@
 </template>
 
 <script>
+// Axios handles HTTP client for browser and node.js
 import axios from "axios";
 
     export default {
@@ -52,6 +54,7 @@ import axios from "axios";
             }
         },
         methods: {
+            // method uses AXIOS to post the employee object into Mongo database
             handleSubmitForm() { 
                 let apiURL = 'http://localhost:4000/api/create-employee';
                 
@@ -95,7 +98,7 @@ body{
 form {
     max-width: 420px;
     margin: 30px auto;
-    background: white;
+    background: rgb(243, 243, 233);
     text-align: left;
     padding: 40px;
     border-radius: 10px;

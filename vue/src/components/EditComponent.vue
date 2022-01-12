@@ -28,7 +28,7 @@
                     <input type="text" class="form-control" v-model="employee.location" required>
                 </div> <br>
 
-                <div class="form-group">
+                <div class="form-group text-center">
                     <button class="btn btn-danger btn-block">Update</button>
                 </div>
             </form>

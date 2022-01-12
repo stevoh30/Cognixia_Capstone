@@ -1,11 +1,12 @@
 <template>
    <div>
-    <!-- Nav bar -->
+    <!-- Nav bar Display -->
     <nav class="navbar navbar-dark bg-primary justify-content-between flex-nowrap flex-row bg-black">
       <div class="container">
         <a class="navbar-brand float-left">MEVN Capstone Project</a>
         <ul class="nav navbar-nav flex-row float-right">
           <li class="nav-item">
+           <!-- Router-links to navigate through vue router -->
             <router-link class="nav-link pr-3" to="/">Create Employees&nbsp;&nbsp;&nbsp;</router-link>
           </li>
           <li class="nav-item">
@@ -15,7 +16,7 @@
       </div>
     </nav>
 
-    <!-- Router view -->
+    <!-- Router view to display specified path components-->
     <div class="container mt-5">
       <router-view></router-view>
     </div>
@@ -23,23 +24,10 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  // name: 'App',
-  // components: {
-  //   // HelloWorld
-  // }
+
 }
 </script>
 
 <style>
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
 </style>
