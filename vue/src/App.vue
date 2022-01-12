@@ -1,15 +1,15 @@
 <template>
    <div>
     <!-- Nav bar -->
-    <nav class="navbar navbar-dark bg-primary justify-content-between flex-nowrap flex-row">
+    <nav class="navbar navbar-dark bg-primary justify-content-between flex-nowrap flex-row bg-black">
       <div class="container">
         <a class="navbar-brand float-left">MEVN Capstone Project</a>
         <ul class="nav navbar-nav flex-row float-right">
           <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/">Create Employees</router-link>
+            <router-link class="nav-link pr-3" to="/">Create Employees&nbsp;&nbsp;&nbsp;</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/view">View Employees</router-link>
+            <router-link class="nav-link" to="/view">&nbsp;&nbsp;&nbsp;View Employees</router-link>
           </li>
         </ul>
       </div>
@@ -34,12 +34,12 @@ export default {
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
+} */
 </style>
