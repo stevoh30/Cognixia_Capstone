@@ -16,7 +16,7 @@
       </div>
     </nav>
 
-    <!-- Router view to display specified path components-->
+    <!-- Router view to display specified component from path-->
     <div class="container mt-5">
       <router-view></router-view>
     </div>

@@ -1,9 +1,12 @@
 const express = require('express');
 const employeeRoute = express.Router();
 
+// routes for backend node
+
 // model
 let EmployeeModel = require('../models/Employee');
 
+// Create
 employeeRoute.route('/create-employee').post((req, res, next) => {
   EmployeeModel.create(req.body, (error, data) => {
   if (error) {
@@ -14,6 +17,7 @@ employeeRoute.route('/create-employee').post((req, res, next) => {
 })
 });
 
+// Find
 employeeRoute.route('/').get((req, res, next) => {
     EmployeeModel.find((error, data) => {
      if (error) {
@@ -24,6 +28,7 @@ employeeRoute.route('/').get((req, res, next) => {
    })
  })
 
+ // FindById --> Used to edit employees
 employeeRoute.route('/edit-employee/:id').get((req, res, next) => {
    EmployeeModel.findById(req.params.id, (error, data) => {
     if (error) {

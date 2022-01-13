@@ -1,3 +1,5 @@
+
+<!-- Form Display -->
 <template>
     <div class="row">
         <div class="col-md-12">
@@ -12,6 +14,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Display employees -->
                     <tr v-for="employee in Employees" :key="employee._id">
                         <td>{{ employee.id }}</td>
                         <td>{{ employee.name }}</td>
@@ -19,6 +22,7 @@
                         <td>{{ employee.salary }}</td>
                         <td>{{ employee.location }}</td>
                         <td>
+                            <!-- Display buttons through router-link -->
                             <router-link :to="{name: 'edit', params: { id: employee._id }}" class="btn btn-success">Edit
                             </router-link>
                             <button @click.prevent="deleteEmployee(employee._id)" class="btn btn-danger">Delete</button>
@@ -31,6 +35,7 @@
 </template>
 
 <script>
+// Axios handles HTTP client for browser and node.js
     import axios from "axios";
 
     export default {
@@ -39,6 +44,7 @@
                 Employees: []
             }
         },
+        //upon loading this component, returns api data into Employees array
         created() {
             let apiURL = 'http://localhost:4000/api';
             axios.get(apiURL).then(res => {
@@ -47,6 +53,7 @@
                 console.log(error)
             });
         },
+        // delete employee from database using axios library
         methods: {
             deleteEmployee(id){
                 let apiURL = `http://localhost:4000/api/delete-employee/${id}`;

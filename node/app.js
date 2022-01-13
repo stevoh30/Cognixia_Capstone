@@ -1,10 +1,11 @@
+// Imported variables to establish database connectivity
 let express = require('express'),
   cors = require('cors'),
   mongoose = require('mongoose'),
   database = require('./database'),
   bodyParser = require('body-parser');
 
-// Connect mongoDB
+// Connect to mongoDB database
 mongoose.Promise = global.Promise;
 mongoose.connect(database.db, {
     useNewUrlParser: true,
@@ -13,10 +14,11 @@ mongoose.connect(database.db, {
     console.log("Database connected")
   },
   error => {
-    console.log("Database could't be connected to: " + error)
+    console.log("Database couldn't be connected to: " + error)
   }
 )
 
+// Establish API routes
 const employeeAPI = require('../node/routes/employee.route')
 const app = express();
 app.use(bodyParser.json());
@@ -34,9 +36,9 @@ const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
 })
 
-// Find 404
-app.use((req, res, next) => {
-  next(createError(404));
+// Find error
+app.use((err, req, res, next) => {
+  next(err(404));
 });
 
 // error handler

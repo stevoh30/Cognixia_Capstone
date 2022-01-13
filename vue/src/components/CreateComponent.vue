@@ -38,12 +38,13 @@
 </template>
 
 <script>
-// Axios handles HTTP client for browser and node.js
+// Axios handles HTTP client for the browser
 import axios from "axios";
 
     export default {
         data() {
             return {
+                //default values
                 employee: {
                    id: '',
                    name: '',
@@ -54,11 +55,12 @@ import axios from "axios";
             }
         },
         methods: {
-            // method uses AXIOS to post the employee object into Mongo database
+            // method uses Axios library to post the employee object into Mongo database
             handleSubmitForm() { 
                 let apiURL = 'http://localhost:4000/api/create-employee';
                 
                 axios.post(apiURL, this.employee).then(() => {
+                // router resets values after post
                   this.$router.push('/view')
                   this.employee = {
                    id: '',
@@ -74,7 +76,8 @@ import axios from "axios";
         }
     }
 </script>
-<style>
+
+<style> 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

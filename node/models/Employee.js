@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// Employee Schema object
 let employeeSchema = new Schema({
   id: {
     type: String
@@ -18,6 +19,7 @@ let employeeSchema = new Schema({
     type: String
   }
 }, {
+  // database collection to store documents
   collection: 'employees'
 })
 
