@@ -1,23 +1,24 @@
 const express = require('express');
 const employeeRoute = express.Router();
 
-// routes for backend node
+// API routes for backend node
 
-// model
+// Employee model using the EmployeeSchema in Employee.js
 let EmployeeModel = require('../models/Employee');
 
-// Create
+// Create Employee API route
 employeeRoute.route('/create-employee').post((req, res, next) => {
   EmployeeModel.create(req.body, (error, data) => {
   if (error) {
     return next(error)
   } else {
     res.json(data)
+    console.log('Employee successfully created!')
   }
 })
 });
 
-// Find
+// Find Employees API route
 employeeRoute.route('/').get((req, res, next) => {
     EmployeeModel.find((error, data) => {
      if (error) {
@@ -39,7 +40,7 @@ employeeRoute.route('/edit-employee/:id').get((req, res, next) => {
   })
 })
 
-// Update
+// Update Employee API route
 employeeRoute.route('/update-employee/:id').put((req, res, next) => {
   EmployeeModel.findByIdAndUpdate(req.params.id, {
     $set: req.body
@@ -53,7 +54,7 @@ employeeRoute.route('/update-employee/:id').put((req, res, next) => {
   })
 })
 
-// Delete
+// Delete Employee API route
 employeeRoute.route('/delete-employee/:id').delete((req, res, next) => {
   EmployeeModel.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
@@ -62,8 +63,10 @@ employeeRoute.route('/delete-employee/:id').delete((req, res, next) => {
       res.status(200).json({
         msg: data
       })
+      console.log('Employee successfully deleted!')
     }
   })
 })
 
+//Export
 module.exports = employeeRoute;

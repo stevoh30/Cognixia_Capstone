@@ -1,11 +1,11 @@
-// Imported variables to establish database connectivity
+// Imported libraries 
 let express = require('express'),
   cors = require('cors'),
   mongoose = require('mongoose'),
   database = require('./database'),
   bodyParser = require('body-parser');
 
-// Connect to mongoDB database
+// Connection to mongoDB database
 mongoose.Promise = global.Promise;
 mongoose.connect(database.db, {
     useNewUrlParser: true,
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 
-// API
+// Connects API
 app.use('/api', employeeAPI)
 
 // Create port

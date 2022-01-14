@@ -23,4 +23,5 @@ let employeeSchema = new Schema({
   collection: 'employees'
 })
 
+// Export
 module.exports = mongoose.model('Employee', employeeSchema)

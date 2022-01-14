@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h3 class="text-center">Update Employee</h3>
-            <form @submit.prevent="handleUpdateForm">
+            <form @submit.prevent="handleUpdateForm" class ="border border-info">
                <div class="form-group">
                     <label>ID</label>
                     <input type="text" class="form-control" v-model="employee.id" required>
@@ -31,7 +31,7 @@
                 </div> <br>
 
                 <div class="form-group text-center">
-                    <button class="btn btn-danger btn-block">Update</button>
+                    <button class="btn btn-primary btn-block">Update</button>
                 </div>
             </form>
         </div>
@@ -57,7 +57,7 @@ export default {
         })
     },
     methods: {
-        // Updates employee information using Axios
+        // Make a call to api using the Axios library to update employee information to database
         handleUpdateForm() {
             let apiURL = `http://localhost:4000/api/update-employee/${this.$route.params.id}`;
 

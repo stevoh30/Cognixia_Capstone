@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h3 class="text-center">Create Employee</h3>
-            <form @submit.prevent="handleSubmitForm">
+            <form @submit.prevent="handleSubmitForm" class ="border border-info">
                 <div class="form-group">
                     <label>ID</label>
                     <input type="text" class="form-control" v-model="employee.id" required>
@@ -30,7 +30,7 @@
                 </div> <br>
 
                 <div class="form-group text-center">
-                    <button class="btn btn-danger btn-block">Create</button>
+                    <button class="btn btn-primary btn-block btn-">Create</button>
                 </div>
             </form>
         </div>
@@ -55,7 +55,7 @@ import axios from "axios";
             }
         },
         methods: {
-            // method uses Axios library to post the employee object into Mongo database
+            // Make a call to api using the Axios library to create employee in database
             handleSubmitForm() { 
                 let apiURL = 'http://localhost:4000/api/create-employee';
                 
@@ -95,7 +95,10 @@ import axios from "axios";
 
 body{
   margin:0;
-  background: rgb(238, 217, 189);
+  /* background: rgb(238, 217, 189); */
+  background-image: url("../assets/mountains.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 form {
@@ -105,6 +108,8 @@ form {
     text-align: left;
     padding: 40px;
     border-radius: 10px;
+    /* border-color: black;
+    border */
   }
   label {
     color: #aaa;
@@ -130,6 +135,13 @@ form {
 }
 table{
     background-color:rgb(241, 241, 226);
+    /* opacity: 0.9; */
+}
+.btn-block{
+     width: 100%;
+}
+.border{
+    border-width: thick;
 }
 
 
